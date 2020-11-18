@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "BRJFgr4JyJl8KMudwH6ChC5nk/5WfJOpkZtXVjLy9b1nO6UR9tclaYLTNZn2XqO+6CXzLHK3KSPcUHm3WXSLgQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\chen8\\Desktop\\MovieShop\\MovieShop.Core\\MovieShop.Core.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\chen8\\.nuget\\packages\\system.componentmodel.annotations\\5.0.0\\system.componentmodel.annotations.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
