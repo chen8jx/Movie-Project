@@ -9,8 +9,8 @@ using MovieShop.Infrastructure.Data;
 namespace MovieShop.Infrastructure.Migrations
 {
     [DbContext(typeof(MovieShopDbContext))]
-    [Migration("20201118192425_InitialMigration")]
-    partial class InitialMigration
+    [Migration("20201119224029_GenreTable")]
+    partial class GenreTable
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -28,7 +28,8 @@ namespace MovieShop.Infrastructure.Migrations
                         .UseIdentityColumn();
 
                     b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(24)
+                        .HasColumnType("nvarchar(24)");
 
                     b.HasKey("Id");
 

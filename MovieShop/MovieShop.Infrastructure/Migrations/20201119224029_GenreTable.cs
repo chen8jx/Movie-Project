@@ -2,7 +2,7 @@
 
 namespace MovieShop.Infrastructure.Migrations
 {
-    public partial class InitialMigration : Migration
+    public partial class GenreTable : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -12,7 +12,7 @@ namespace MovieShop.Infrastructure.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    Name = table.Column<string>(type: "nvarchar(24)", maxLength: 24, nullable: true)
                 },
                 constraints: table =>
                 {

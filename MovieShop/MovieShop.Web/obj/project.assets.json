@@ -8608,11 +8608,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\chen8\\Desktop\\MovieShop\\MovieShop.Web\\MovieShop.Web.csproj",
+      "projectUniqueName": "C:\\Users\\chen8\\Desktop\\Movie-Project\\MovieShop\\MovieShop.Web\\MovieShop.Web.csproj",
       "projectName": "MovieShop.Web",
-      "projectPath": "C:\\Users\\chen8\\Desktop\\MovieShop\\MovieShop.Web\\MovieShop.Web.csproj",
+      "projectPath": "C:\\Users\\chen8\\Desktop\\Movie-Project\\MovieShop\\MovieShop.Web\\MovieShop.Web.csproj",
       "packagesPath": "C:\\Users\\chen8\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\chen8\\Desktop\\MovieShop\\MovieShop.Web\\obj\\",
+      "outputPath": "C:\\Users\\chen8\\Desktop\\Movie-Project\\MovieShop\\MovieShop.Web\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\chen8\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -8629,11 +8629,11 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\chen8\\Desktop\\MovieShop\\MovieShop.Core\\MovieShop.Core.csproj": {
-              "projectPath": "C:\\Users\\chen8\\Desktop\\MovieShop\\MovieShop.Core\\MovieShop.Core.csproj"
+            "C:\\Users\\chen8\\Desktop\\Movie-Project\\MovieShop\\MovieShop.Core\\MovieShop.Core.csproj": {
+              "projectPath": "C:\\Users\\chen8\\Desktop\\Movie-Project\\MovieShop\\MovieShop.Core\\MovieShop.Core.csproj"
             },
-            "C:\\Users\\chen8\\Desktop\\MovieShop\\MovieShop.Infrastructure\\MovieShop.Infrastructure.csproj": {
-              "projectPath": "C:\\Users\\chen8\\Desktop\\MovieShop\\MovieShop.Infrastructure\\MovieShop.Infrastructure.csproj"
+            "C:\\Users\\chen8\\Desktop\\Movie-Project\\MovieShop\\MovieShop.Infrastructure\\MovieShop.Infrastructure.csproj": {
+              "projectPath": "C:\\Users\\chen8\\Desktop\\Movie-Project\\MovieShop\\MovieShop.Infrastructure\\MovieShop.Infrastructure.csproj"
             }
           }
         }
