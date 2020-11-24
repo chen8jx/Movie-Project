@@ -29,5 +29,7 @@ namespace MovieShop.Core.Entities
         public ICollection<MovieCast> MovieCast { get; set; }
         public ICollection<MovieCrew> MovieCrew { get; set; }
         public ICollection<Review> Review { get; set; }
+        public ICollection<Purchase> Purchase { get; set; }
+        public ICollection<Favorite> Favorite { get; set; }
     }
 }

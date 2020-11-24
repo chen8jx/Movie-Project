@@ -29,5 +29,8 @@ namespace MovieShop.Core.Entities
         public bool? IsLocked { get; set; }
         public int? AccessFailedCount { get; set; }
         public ICollection<Review> Review { get; set; }
+        public ICollection<Purchase> Purchase { get; set; }
+        public ICollection<Favorite> Favorite { get; set; }
+        public ICollection<Role> Role { get; set; }
     }
 }
