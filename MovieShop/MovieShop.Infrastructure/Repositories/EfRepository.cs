@@ -47,6 +47,7 @@ namespace MovieShop.Infrastructure.Repositories
         public async Task<T> AddAsync(T entity)
         {
             await _dbContext.Set<T>().AddAsync(entity);
+            //this makes sure the code is executed and databse will be updated
             await _dbContext.SaveChangesAsync();
             return entity;
         }

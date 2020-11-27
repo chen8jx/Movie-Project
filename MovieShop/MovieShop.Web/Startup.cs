@@ -9,6 +9,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using MovieShop.Core.ServiceInterfaces;
+using MovieShop.Infrastructure.Services;
+using MovieShop.Core.RepositoryInterfaces;
+using MovieShop.Infrastructure.Repositories;
+using MovieShop.Core.Entities;
 
 namespace MovieShop.Web
 {
@@ -25,8 +30,21 @@ namespace MovieShop.Web
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+
+            //.Net core has built in ioc support
+            //.net framework did not had built i ioc, we had to use third party ioc,inject, autofac
             services.AddDbContext<MovieShopDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString(("MovieShopDbConnection"))));
+
+            //Register our DI services...binding services to interfaces
+            //also repository
+            services.AddScoped<IMovieService, MovieService>();
+            services.AddScoped<IMovieRepository, MovieRepository>();
+
+            services.AddScoped<IAsyncRepository<Favorite>, EfRepository<Favorite>>();
+
+            services.AddScoped<IGenreService, GenreService>();
+            services.AddScoped<IAsyncRepository<Genre>, EfRepository<Genre>>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

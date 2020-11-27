@@ -322,3 +322,5 @@ C:\Users\chen8\Desktop\Movie-Project\MovieShop\MovieShop.Web\obj\Debug\netcoreap
 C:\Users\chen8\Desktop\Movie-Project\MovieShop\MovieShop.Web\obj\Debug\netcoreapp3.1\MovieShop.Web.dll
 C:\Users\chen8\Desktop\Movie-Project\MovieShop\MovieShop.Web\obj\Debug\netcoreapp3.1\MovieShop.Web.pdb
 C:\Users\chen8\Desktop\Movie-Project\MovieShop\MovieShop.Web\obj\Debug\netcoreapp3.1\MovieShop.Web.genruntimeconfig.cache
+C:\Users\chen8\Desktop\Movie-Project\MovieShop\MovieShop.Web\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_MovieCard.cshtml.g.cs
+C:\Users\chen8\Desktop\Movie-Project\MovieShop\MovieShop.Web\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\Genres\Default.cshtml.g.cs
