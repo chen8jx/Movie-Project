@@ -1,4 +1,5 @@
 ﻿using MovieShop.Core.Entities;
+using MovieShop.Core.Models.Request;
 using MovieShop.Core.Models.Response;
 using MovieShop.Core.RepositoryInterfaces;
 using MovieShop.Core.ServiceInterfaces;
@@ -31,6 +32,24 @@ namespace MovieShop.Infrastructure.Services
             _favoriteRepository = favoriteRepository;
         }
 
+        public Task<MovieDetailsResponseModel> CreateMovie(MovieCreateRequest movieCreateRequest)
+        {
+            throw new NotImplementedException();
+        }
+
+        //public Task<PagedResultSet<MovieResponseModel>> GetAllMoviePurchasesByPagination(int pageSize = 20, int page = 0)
+        //{
+        //    throw new NotImplementedException();
+        //}
+
+        //public Task<PaginatedList<MovieResponseModel>> GetAllPurchasesByMovieId(int movieId)
+        //{
+        //    throw new NotImplementedException();
+        //}
+        //public Task<PagedResultSet<MovieResponseModel>> GetMoviesByPagination(int pageSize = 20, int page = 0, string title = "")
+        //{
+        //    throw new NotImplementedException();
+        //}
         public async Task<MovieDetailsResponseModel> GetMovieAsync(int id)
         {
             var movie = await _repository.GetByIdAsync(id);
@@ -56,6 +75,26 @@ namespace MovieShop.Infrastructure.Services
             return movieDetails;
         }
 
+        public Task<IEnumerable<MovieResponseModel>> GetMoviesByGenre(int genreId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<int> GetMoviesCount(string title = "")
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<IEnumerable<ReviewMovieResponseModel>> GetReviewsForMovie(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<IEnumerable<MovieResponseModel>> GetTopRatedMovies()
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task<IEnumerable<MovieResponseModel>> GetTopRevenueMovies()
         {
             // Repository?
@@ -75,6 +114,11 @@ namespace MovieShop.Infrastructure.Services
                 });
             }
             return movieResponseModel;
+        }
+
+        public Task<MovieDetailsResponseModel> UpdateMovie(MovieCreateRequest movieCreateRequest)
+        {
+            throw new NotImplementedException();
         }
     }
 }
