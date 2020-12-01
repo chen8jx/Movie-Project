@@ -324,3 +324,8 @@ C:\Users\chen8\Desktop\Movie-Project\MovieShop\MovieShop.Web\obj\Debug\netcoreap
 C:\Users\chen8\Desktop\Movie-Project\MovieShop\MovieShop.Web\obj\Debug\netcoreapp3.1\MovieShop.Web.genruntimeconfig.cache
 C:\Users\chen8\Desktop\Movie-Project\MovieShop\MovieShop.Web\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_MovieCard.cshtml.g.cs
 C:\Users\chen8\Desktop\Movie-Project\MovieShop\MovieShop.Web\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\Genres\Default.cshtml.g.cs
+C:\Users\chen8\Desktop\Movie-Project\MovieShop\MovieShop.Web\obj\Debug\netcoreapp3.1\Razor\Views\Account\Register.cshtml.g.cs
+C:\Users\chen8\Desktop\Movie-Project\MovieShop\MovieShop.Web\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\chen8\Desktop\Movie-Project\MovieShop\MovieShop.Web\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\chen8\Desktop\Movie-Project\MovieShop\MovieShop.Web\obj\Debug\netcoreapp3.1\Razor\Views\Account\Login.cshtml.g.cs
+C:\Users\chen8\Desktop\Movie-Project\MovieShop\MovieShop.Web\obj\Debug\netcoreapp3.1\Razor\Views\Account\MyAccount.cshtml.g.cs
