@@ -14,7 +14,7 @@ namespace MovieShop.Infrastructure.Services
 {
     public class MovieService : IMovieService
     {
-        private readonly IMovieRepository _repository;
+        private readonly IMovieRepository _movieRepository;
         private readonly IAsyncRepository<Favorite> _favoriteRepository;
         //private MovieRepository repository is also working
         //because MR is inhenrited from IMR
@@ -23,18 +23,34 @@ namespace MovieShop.Infrastructure.Services
         //DI is pattern that enables us to wriite loosely coupled code so taht code is more maintainable and testable
 
 
-        public MovieService(IMovieRepository repository, IAsyncRepository<Favorite> favoriteRepository)
+        public MovieService(IMovieRepository movieRepository, IAsyncRepository<Favorite> favoriteRepository)
         {
             //create MovieRepo instance in every method in my service class
             //newing up is very convienient but we need to avoid it as much as we can
             //_repository = new MovieRepository(new MovieShopDbContext(null));
-            _repository = repository;
+            _movieRepository = movieRepository;
             _favoriteRepository = favoriteRepository;
         }
 
-        public Task<MovieDetailsResponseModel> CreateMovie(MovieCreateRequest movieCreateRequest)
+        public async Task<MovieDetailsResponseModel> CreateMovie(MovieCreateRequest movieCreateRequest)
         {
-            throw new NotImplementedException();
+            var dbMovie = await _movieRepository.GetMovieByTitle(movieCreateRequest.Title);
+            if(dbMovie!=null&& string.Equals(dbMovie.Title, movieCreateRequest.Title, StringComparison.CurrentCultureIgnoreCase))
+                throw new Exception("Movie Already Exits");
+
+            var movie = new Movie
+            {
+                Title = movieCreateRequest.Title,
+                Overview = movieCreateRequest.Overview
+            };
+            var createMovie = await _movieRepository.AddAsync(movie);
+            var response = new MovieDetailsResponseModel
+            {
+                Id = createMovie.Id,
+                Title = createMovie.Title,
+                Overview = createMovie.Overview
+            };
+            return response;
         }
 
         //public Task<PagedResultSet<MovieResponseModel>> GetAllMoviePurchasesByPagination(int pageSize = 20, int page = 0)
@@ -52,7 +68,7 @@ namespace MovieShop.Infrastructure.Services
         //}
         public async Task<MovieDetailsResponseModel> GetMovieAsync(int id)
         {
-            var movie = await _repository.GetByIdAsync(id);
+            var movie = await _movieRepository.GetByIdAsync(id);
             var count = await _favoriteRepository.GetCountAsync(f => f.MovieId == id);
             var movieDetails = new MovieDetailsResponseModel
             {
@@ -100,7 +116,7 @@ namespace MovieShop.Infrastructure.Services
             // Repository?
             // MovieRepository class
 
-            var movies = await _repository.GetHighestRevenueMovies();
+            var movies = await _movieRepository.GetHighestRevenueMovies();
             // Map our Movie Entity to MovieResponseModel
             var movieResponseModel = new List<MovieResponseModel>();
             foreach (var movie in movies)

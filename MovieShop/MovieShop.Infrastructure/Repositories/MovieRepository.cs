@@ -26,7 +26,10 @@ namespace MovieShop.Infrastructure.Repositories
         {
             throw new NotImplementedException();
         }
-
+        public async Task<Movie> GetMovieByTitle(string movieTitle)
+        {
+            return await _dbContext.Movie.FirstOrDefaultAsync(m => m.Title == movieTitle);
+        }
         public async Task<IEnumerable<Movie>> GetTopRatedMovies()
         {
             throw new NotImplementedException();
