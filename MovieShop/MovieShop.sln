@@ -5,9 +5,11 @@ VisualStudioVersion = 16.0.30711.63
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MovieShop.Web", "MovieShop.Web\MovieShop.Web.csproj", "{F261EF07-2B2F-4E3A-ABEA-4CCE599FF859}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieShop.Core", "MovieShop.Core\MovieShop.Core.csproj", "{70D75857-1DC9-4BB8-B0CB-655F33A33961}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MovieShop.Core", "MovieShop.Core\MovieShop.Core.csproj", "{70D75857-1DC9-4BB8-B0CB-655F33A33961}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieShop.Infrastructure", "MovieShop.Infrastructure\MovieShop.Infrastructure.csproj", "{D0EAD5D0-EBB8-49A2-A32A-A8798B3E5999}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MovieShop.Infrastructure", "MovieShop.Infrastructure\MovieShop.Infrastructure.csproj", "{D0EAD5D0-EBB8-49A2-A32A-A8798B3E5999}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieShop.UnitTest", "MovieShop.UnitTest\MovieShop.UnitTest.csproj", "{223D2FE3-A2BF-4663-8732-85BF5D7DE0CA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{D0EAD5D0-EBB8-49A2-A32A-A8798B3E5999}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D0EAD5D0-EBB8-49A2-A32A-A8798B3E5999}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D0EAD5D0-EBB8-49A2-A32A-A8798B3E5999}.Release|Any CPU.Build.0 = Release|Any CPU
+		{223D2FE3-A2BF-4663-8732-85BF5D7DE0CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{223D2FE3-A2BF-4663-8732-85BF5D7DE0CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{223D2FE3-A2BF-4663-8732-85BF5D7DE0CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{223D2FE3-A2BF-4663-8732-85BF5D7DE0CA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

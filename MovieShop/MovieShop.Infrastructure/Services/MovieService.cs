@@ -15,7 +15,7 @@ namespace MovieShop.Infrastructure.Services
     public class MovieService : IMovieService
     {
         private readonly IMovieRepository _movieRepository;
-        private readonly IAsyncRepository<Favorite> _favoriteRepository;
+        //private readonly IAsyncRepository<Favorite> _favoriteRepository;
         //private MovieRepository repository is also working
         //because MR is inhenrited from IMR
 
@@ -23,13 +23,13 @@ namespace MovieShop.Infrastructure.Services
         //DI is pattern that enables us to wriite loosely coupled code so taht code is more maintainable and testable
 
 
-        public MovieService(IMovieRepository movieRepository, IAsyncRepository<Favorite> favoriteRepository)
+        public MovieService(IMovieRepository movieRepository)
         {
             //create MovieRepo instance in every method in my service class
             //newing up is very convienient but we need to avoid it as much as we can
             //_repository = new MovieRepository(new MovieShopDbContext(null));
             _movieRepository = movieRepository;
-            _favoriteRepository = favoriteRepository;
+            //_favoriteRepository = favoriteRepository;
         }
 
         public async Task<MovieDetailsResponseModel> CreateMovie(MovieCreateRequest movieCreateRequest)
@@ -69,7 +69,7 @@ namespace MovieShop.Infrastructure.Services
         public async Task<MovieDetailsResponseModel> GetMovieAsync(int id)
         {
             var movie = await _movieRepository.GetByIdAsync(id);
-            var count = await _favoriteRepository.GetCountAsync(f => f.MovieId == id);
+            //var count = await _favoriteRepository.GetCountAsync(f => f.MovieId == id);
             var movieDetails = new MovieDetailsResponseModel
             {
                 Id = movie.Id,
@@ -85,8 +85,8 @@ namespace MovieShop.Infrastructure.Services
                 TmdbUrl = movie.TmdbUrl,
                 ReleaseDate = movie.ReleaseDate,
                 RunTime = movie.RunTime,
-                Price = movie.Price,
-                FavoritesCount = count
+                Price = movie.Price
+                //FavoritesCount = count
             };
             return movieDetails;
         }
@@ -121,11 +121,12 @@ namespace MovieShop.Infrastructure.Services
             var movieResponseModel = new List<MovieResponseModel>();
             foreach (var movie in movies)
             {
+                //if(ReleaseDate!=null)
                 movieResponseModel.Add(new MovieResponseModel
                 {
                     Id = movie.Id,
                     PosterUrl = movie.PosterUrl,
-                    ReleaseDate = movie.ReleaseDate.Value,
+                    //ReleaseDate = movie.ReleaseDate.Value,
                     Title = movie.Title
                 });
             }
