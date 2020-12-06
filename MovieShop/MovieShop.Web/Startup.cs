@@ -42,7 +42,8 @@ namespace MovieShop.Web
             services.AddScoped<IMovieService, MovieService>();
             services.AddScoped<IMovieRepository, MovieRepository>();
 
-            services.AddScoped<IAsyncRepository<Favorite>, EfRepository<Favorite>>();
+            services.AddScoped<ICastService, CastService>();
+            services.AddScoped<IAsyncRepository<Cast>, EfRepository<Cast>>();
 
             services.AddScoped<IGenreService, GenreService>();
             services.AddScoped<IAsyncRepository<Genre>, EfRepository<Genre>>();
@@ -52,7 +53,7 @@ namespace MovieShop.Web
             services.AddScoped<ICryptoService, CryptoService>();
 
             // sets the default authentication scheme for the app
- 
+
             services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(options =>
             {
                 options.Cookie.Name = "MovieShopAuthCookie";

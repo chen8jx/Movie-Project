@@ -95,9 +95,21 @@ namespace MovieShop.Infrastructure.Services
             throw new NotImplementedException();
         }
 
-        public Task<UserRegisterResponseModel> GetUserDetails(int id)
+        public async Task<UserRegisterResponseModel> GetUserDetails(int id)
         {
-            throw new NotImplementedException();
+            var user = await _userRepository.GetByIdAsync(id);
+            if (user == null)
+            {
+                return null;
+            }
+            var response = new UserRegisterResponseModel
+            {
+                Id = user.Id,
+                Email = user.Email,
+                FirstName = user.FirstName,
+                LastName = user.LastName
+            };
+            return response;
         }
 
         public Task<bool> IsMoviePurchased(PurchaseRequestModel purchaseRequest)

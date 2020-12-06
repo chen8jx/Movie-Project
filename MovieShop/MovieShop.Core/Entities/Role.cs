@@ -12,6 +12,6 @@ namespace MovieShop.Core.Entities
         public int Id { get; set; }
         [MaxLength(20)]
         public string Name { get; set; }
-        public ICollection<User> User { get; set; }
+        public ICollection<UserRole> UserRole { get; set; }
     }
 }

@@ -22,3 +22,15 @@ C:\Users\chen8\Desktop\Movie-Project\MovieShop\MovieShop.Infrastructure\obj\Debu
 C:\Users\chen8\Desktop\Movie-Project\MovieShop\MovieShop.Infrastructure\obj\Debug\netstandard2.1\MovieShop.Infrastructure.csproj.CopyComplete
 C:\Users\chen8\Desktop\Movie-Project\MovieShop\MovieShop.Infrastructure\obj\Debug\netstandard2.1\MovieShop.Infrastructure.dll
 C:\Users\chen8\Desktop\Movie-Project\MovieShop\MovieShop.Infrastructure\obj\Debug\netstandard2.1\MovieShop.Infrastructure.pdb
+C:\Users\chen8\Desktop\MovieShop\Movie-Project\MovieShop\MovieShop.Infrastructure\bin\Debug\netstandard2.1\MovieShop.Infrastructure.deps.json
+C:\Users\chen8\Desktop\MovieShop\Movie-Project\MovieShop\MovieShop.Infrastructure\bin\Debug\netstandard2.1\MovieShop.Infrastructure.dll
+C:\Users\chen8\Desktop\MovieShop\Movie-Project\MovieShop\MovieShop.Infrastructure\bin\Debug\netstandard2.1\MovieShop.Infrastructure.pdb
+C:\Users\chen8\Desktop\MovieShop\Movie-Project\MovieShop\MovieShop.Infrastructure\bin\Debug\netstandard2.1\MovieShop.Core.dll
+C:\Users\chen8\Desktop\MovieShop\Movie-Project\MovieShop\MovieShop.Infrastructure\bin\Debug\netstandard2.1\MovieShop.Core.pdb
+C:\Users\chen8\Desktop\MovieShop\Movie-Project\MovieShop\MovieShop.Infrastructure\obj\Debug\netstandard2.1\MovieShop.Infrastructure.csprojAssemblyReference.cache
+C:\Users\chen8\Desktop\MovieShop\Movie-Project\MovieShop\MovieShop.Infrastructure\obj\Debug\netstandard2.1\MovieShop.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\chen8\Desktop\MovieShop\Movie-Project\MovieShop\MovieShop.Infrastructure\obj\Debug\netstandard2.1\MovieShop.Infrastructure.AssemblyInfo.cs
+C:\Users\chen8\Desktop\MovieShop\Movie-Project\MovieShop\MovieShop.Infrastructure\obj\Debug\netstandard2.1\MovieShop.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\chen8\Desktop\MovieShop\Movie-Project\MovieShop\MovieShop.Infrastructure\obj\Debug\netstandard2.1\MovieShop.Infrastructure.csproj.CopyComplete
+C:\Users\chen8\Desktop\MovieShop\Movie-Project\MovieShop\MovieShop.Infrastructure\obj\Debug\netstandard2.1\MovieShop.Infrastructure.dll
+C:\Users\chen8\Desktop\MovieShop\Movie-Project\MovieShop\MovieShop.Infrastructure\obj\Debug\netstandard2.1\MovieShop.Infrastructure.pdb

@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using MovieShop.Core.Entities;
+using MovieShop.Core.Models.Response;
 using MovieShop.Core.RepositoryInterfaces;
 using MovieShop.Infrastructure.Data;
 using System;
@@ -10,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace MovieShop.Infrastructure.Repositories
 {
-    public class MovieRepository: EfRepository<Movie>,IMovieRepository
+    public class MovieRepository : EfRepository<Movie>, IMovieRepository
     {
         public MovieRepository(MovieShopDbContext dbContext) : base(dbContext)
         {
@@ -30,9 +31,29 @@ namespace MovieShop.Infrastructure.Repositories
         {
             return await _dbContext.Movie.FirstOrDefaultAsync(m => m.Title == movieTitle);
         }
-        public async Task<IEnumerable<Movie>> GetTopRatedMovies()
+        public async Task<IEnumerable<MovieRatingResponseModel>> GetTopRatedMovies()
         {
-            throw new NotImplementedException();
+            var topRatedMovies = await _dbContext.Review.Include(m => m.Movie)
+                                                 .GroupBy(r => new
+                                                 {
+                                                     Id = r.MovieId,
+                                                     r.Movie.PosterUrl,
+                                                     r.Movie.Title,
+                                                     r.Movie.ReleaseDate
+                                                 })
+                                                 .OrderByDescending(g => g.Average(m => m.Rating))
+                                                 .Select(m => new MovieRatingResponseModel
+                                                 {
+                                                     Id = m.Key.Id,
+                                                     PosterUrl = m.Key.PosterUrl,
+                                                     Title = m.Key.Title,
+                                                     ReleaseDate = m.Key.ReleaseDate,
+                                                     Rating = m.Average(x => x.Rating)
+                                                 })
+                                                 .Take(50)
+                                                 .ToListAsync();
+
+            return topRatedMovies;
         }
         public override async Task<Movie> GetByIdAsync(int id)
         {
@@ -47,5 +68,10 @@ namespace MovieShop.Infrastructure.Repositories
             //return movie;
             return null;
         }
+
+        //public async Task<IEnumerable<Movie>> GetTopRatedMovies()
+        //{
+        //    throw new NotImplementedException();
+        //}
     }
 }

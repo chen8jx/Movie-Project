@@ -5593,11 +5593,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\chen8\\Desktop\\Movie-Project\\MovieShop\\MovieShop.API\\MovieShop.API.csproj",
+      "projectUniqueName": "C:\\Users\\chen8\\Desktop\\MovieShop\\Movie-Project\\MovieShop\\MovieShop.API\\MovieShop.API.csproj",
       "projectName": "MovieShop.API",
-      "projectPath": "C:\\Users\\chen8\\Desktop\\Movie-Project\\MovieShop\\MovieShop.API\\MovieShop.API.csproj",
+      "projectPath": "C:\\Users\\chen8\\Desktop\\MovieShop\\Movie-Project\\MovieShop\\MovieShop.API\\MovieShop.API.csproj",
       "packagesPath": "C:\\Users\\chen8\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\chen8\\Desktop\\Movie-Project\\MovieShop\\MovieShop.API\\obj\\",
+      "outputPath": "C:\\Users\\chen8\\Desktop\\MovieShop\\Movie-Project\\MovieShop\\MovieShop.API\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\chen8\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -5614,11 +5614,11 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\chen8\\Desktop\\Movie-Project\\MovieShop\\MovieShop.Core\\MovieShop.Core.csproj": {
-              "projectPath": "C:\\Users\\chen8\\Desktop\\Movie-Project\\MovieShop\\MovieShop.Core\\MovieShop.Core.csproj"
+            "C:\\Users\\chen8\\Desktop\\MovieShop\\Movie-Project\\MovieShop\\MovieShop.Core\\MovieShop.Core.csproj": {
+              "projectPath": "C:\\Users\\chen8\\Desktop\\MovieShop\\Movie-Project\\MovieShop\\MovieShop.Core\\MovieShop.Core.csproj"
             },
-            "C:\\Users\\chen8\\Desktop\\Movie-Project\\MovieShop\\MovieShop.Infrastructure\\MovieShop.Infrastructure.csproj": {
-              "projectPath": "C:\\Users\\chen8\\Desktop\\Movie-Project\\MovieShop\\MovieShop.Infrastructure\\MovieShop.Infrastructure.csproj"
+            "C:\\Users\\chen8\\Desktop\\MovieShop\\Movie-Project\\MovieShop\\MovieShop.Infrastructure\\MovieShop.Infrastructure.csproj": {
+              "projectPath": "C:\\Users\\chen8\\Desktop\\MovieShop\\Movie-Project\\MovieShop\\MovieShop.Infrastructure\\MovieShop.Infrastructure.csproj"
             }
           }
         }

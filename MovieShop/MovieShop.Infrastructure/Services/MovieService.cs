@@ -1,4 +1,5 @@
 ﻿using MovieShop.Core.Entities;
+using MovieShop.Core.Helpers;
 using MovieShop.Core.Models.Request;
 using MovieShop.Core.Models.Response;
 using MovieShop.Core.RepositoryInterfaces;
@@ -35,7 +36,7 @@ namespace MovieShop.Infrastructure.Services
         public async Task<MovieDetailsResponseModel> CreateMovie(MovieCreateRequest movieCreateRequest)
         {
             var dbMovie = await _movieRepository.GetMovieByTitle(movieCreateRequest.Title);
-            if(dbMovie!=null&& string.Equals(dbMovie.Title, movieCreateRequest.Title, StringComparison.CurrentCultureIgnoreCase))
+            if (dbMovie != null && string.Equals(dbMovie.Title, movieCreateRequest.Title, StringComparison.CurrentCultureIgnoreCase))
                 throw new Exception("Movie Already Exits");
 
             var movie = new Movie
@@ -53,10 +54,10 @@ namespace MovieShop.Infrastructure.Services
             return response;
         }
 
-        //public Task<PagedResultSet<MovieResponseModel>> GetAllMoviePurchasesByPagination(int pageSize = 20, int page = 0)
-        //{
-        //    throw new NotImplementedException();
-        //}
+        public Task<PagedResultSet<MovieResponseModel>> GetAllMoviePurchasesByPagination(int pageSize = 20, int page = 0)
+        {
+            throw new NotImplementedException();
+        }
 
         //public Task<PaginatedList<MovieResponseModel>> GetAllPurchasesByMovieId(int movieId)
         //{
@@ -101,14 +102,24 @@ namespace MovieShop.Infrastructure.Services
             throw new NotImplementedException();
         }
 
-        public Task<IEnumerable<ReviewMovieResponseModel>> GetReviewsForMovie(int id)
+        public async Task<IEnumerable<ReviewMovieResponseModel>> GetReviewsForMovie(int id)
         {
             throw new NotImplementedException();
         }
 
-        public Task<IEnumerable<MovieResponseModel>> GetTopRatedMovies()
+        public async Task<IEnumerable<MovieRatingResponseModel>> GetTopRatedMovies()
         {
-            throw new NotImplementedException();
+            var movies = await _movieRepository.GetTopRatedMovies();
+            if (movies == null)
+            {
+                throw new Exception("No Movies Found");
+            }
+            //var response = new MovieResponseModel
+            //{
+            //    Id = movies.Id,
+            //    Title=m
+            //}
+            return movies;
         }
 
         public async Task<IEnumerable<MovieResponseModel>> GetTopRevenueMovies()
@@ -133,9 +144,38 @@ namespace MovieShop.Infrastructure.Services
             return movieResponseModel;
         }
 
-        public Task<MovieDetailsResponseModel> UpdateMovie(MovieCreateRequest movieCreateRequest)
+        public async Task<MovieDetailsResponseModel> UpdateMovie(MovieCreateRequest movieCreateRequest)
         {
             throw new NotImplementedException();
+            //var dbMovie = await _movieRepository.GetMovieByTitle(movieCreateRequest.Title);
+            //if (dbMovie == null)
+            //{
+            //    throw new Exception("Movie Not Found");
+            //}
+            //var movie = new Movie
+            //{
+            //    Title = movieCreateRequest.Title,
+            //    Overview = movieCreateRequest.Overview,
+            //    Tagline = movieCreateRequest.Tagline,
+            //    Revenue = movieCreateRequest.Revenue,
+            //    Budget = movieCreateRequest.Budget,
+            //    ImdbUrl = movieCreateRequest.ImdbUrl,
+            //    TmdbUrl = movieCreateRequest.TmdbUrl,
+            //    PosterUrl = movieCreateRequest.PosterUrl,
+            //    BackdropUrl = movieCreateRequest.BackdropUrl,
+            //    OriginalLanguage = movieCreateRequest.OriginalLanguage,
+            //    ReleaseDate = movieCreateRequest.ReleaseDate,
+            //    RunTime = movieCreateRequest.RunTime,
+            //    Price = movieCreateRequest.Price
+            //};
+            //var updateMovie = await _movieRepository.UpdateAsync(movie);
+            //var response = new MovieDetailsResponseModel
+            //{
+            //    Id = updateMovie.Id,
+            //    Title = updateMovie.Title,
+            //    Overview = updateMovie.Overview
+            //};
+            //return response;
         }
     }
 }

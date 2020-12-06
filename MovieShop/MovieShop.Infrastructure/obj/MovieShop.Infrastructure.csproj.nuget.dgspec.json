@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\chen8\\Desktop\\Movie-Project\\MovieShop\\MovieShop.Infrastructure\\MovieShop.Infrastructure.csproj": {}
+    "C:\\Users\\chen8\\Desktop\\MovieShop\\Movie-Project\\MovieShop\\MovieShop.Infrastructure\\MovieShop.Infrastructure.csproj": {}
   },
   "projects": {
-    "C:\\Users\\chen8\\Desktop\\Movie-Project\\MovieShop\\MovieShop.Core\\MovieShop.Core.csproj": {
+    "C:\\Users\\chen8\\Desktop\\MovieShop\\Movie-Project\\MovieShop\\MovieShop.Core\\MovieShop.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\chen8\\Desktop\\Movie-Project\\MovieShop\\MovieShop.Core\\MovieShop.Core.csproj",
+        "projectUniqueName": "C:\\Users\\chen8\\Desktop\\MovieShop\\Movie-Project\\MovieShop\\MovieShop.Core\\MovieShop.Core.csproj",
         "projectName": "MovieShop.Core",
-        "projectPath": "C:\\Users\\chen8\\Desktop\\Movie-Project\\MovieShop\\MovieShop.Core\\MovieShop.Core.csproj",
+        "projectPath": "C:\\Users\\chen8\\Desktop\\MovieShop\\Movie-Project\\MovieShop\\MovieShop.Core\\MovieShop.Core.csproj",
         "packagesPath": "C:\\Users\\chen8\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\chen8\\Desktop\\Movie-Project\\MovieShop\\MovieShop.Core\\obj\\",
+        "outputPath": "C:\\Users\\chen8\\Desktop\\MovieShop\\Movie-Project\\MovieShop\\MovieShop.Core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\chen8\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -64,14 +64,14 @@
         }
       }
     },
-    "C:\\Users\\chen8\\Desktop\\Movie-Project\\MovieShop\\MovieShop.Infrastructure\\MovieShop.Infrastructure.csproj": {
+    "C:\\Users\\chen8\\Desktop\\MovieShop\\Movie-Project\\MovieShop\\MovieShop.Infrastructure\\MovieShop.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\chen8\\Desktop\\Movie-Project\\MovieShop\\MovieShop.Infrastructure\\MovieShop.Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\chen8\\Desktop\\MovieShop\\Movie-Project\\MovieShop\\MovieShop.Infrastructure\\MovieShop.Infrastructure.csproj",
         "projectName": "MovieShop.Infrastructure",
-        "projectPath": "C:\\Users\\chen8\\Desktop\\Movie-Project\\MovieShop\\MovieShop.Infrastructure\\MovieShop.Infrastructure.csproj",
+        "projectPath": "C:\\Users\\chen8\\Desktop\\MovieShop\\Movie-Project\\MovieShop\\MovieShop.Infrastructure\\MovieShop.Infrastructure.csproj",
         "packagesPath": "C:\\Users\\chen8\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\chen8\\Desktop\\Movie-Project\\MovieShop\\MovieShop.Infrastructure\\obj\\",
+        "outputPath": "C:\\Users\\chen8\\Desktop\\MovieShop\\Movie-Project\\MovieShop\\MovieShop.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\chen8\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -88,8 +88,8 @@
           "netstandard2.1": {
             "targetAlias": "netstandard2.1",
             "projectReferences": {
-              "C:\\Users\\chen8\\Desktop\\Movie-Project\\MovieShop\\MovieShop.Core\\MovieShop.Core.csproj": {
-                "projectPath": "C:\\Users\\chen8\\Desktop\\Movie-Project\\MovieShop\\MovieShop.Core\\MovieShop.Core.csproj"
+              "C:\\Users\\chen8\\Desktop\\MovieShop\\Movie-Project\\MovieShop\\MovieShop.Core\\MovieShop.Core.csproj": {
+                "projectPath": "C:\\Users\\chen8\\Desktop\\MovieShop\\Movie-Project\\MovieShop\\MovieShop.Core\\MovieShop.Core.csproj"
               }
             }
           }

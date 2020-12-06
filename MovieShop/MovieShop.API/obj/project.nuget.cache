@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "/l9jWOznEfxczZTI4fAmau5VbgwUN/TZXAm0auZRqWBXNqftknSod4u3pG3kCuW6atAEzozk2YfGBSpEI20+SQ==",
+  "dgSpecHash": "Vcn04ByYMrO85fp62cP+Hsh3YnGSW+RqOWdRY90InRWbmyufusByGNArJ80Bxh24zRaz8F+5VPu8O41+sRmFVw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\chen8\\Desktop\\Movie-Project\\MovieShop\\MovieShop.API\\MovieShop.API.csproj",
+  "projectFilePath": "C:\\Users\\chen8\\Desktop\\MovieShop\\Movie-Project\\MovieShop\\MovieShop.API\\MovieShop.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\chen8\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\5.0.0\\microsoft.aspnetcore.authentication.jwtbearer.5.0.0.nupkg.sha512",
     "C:\\Users\\chen8\\.nuget\\packages\\microsoft.aspnetcore.authentication.openidconnect\\5.0.0\\microsoft.aspnetcore.authentication.openidconnect.5.0.0.nupkg.sha512",

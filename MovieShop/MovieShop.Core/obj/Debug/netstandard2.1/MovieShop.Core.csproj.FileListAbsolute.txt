@@ -16,3 +16,12 @@ C:\Users\chen8\Desktop\Movie-Project\MovieShop\MovieShop.Core\obj\Debug\netstand
 C:\Users\chen8\Desktop\Movie-Project\MovieShop\MovieShop.Core\obj\Debug\netstandard2.1\MovieShop.Core.csproj.CoreCompileInputs.cache
 C:\Users\chen8\Desktop\Movie-Project\MovieShop\MovieShop.Core\obj\Debug\netstandard2.1\MovieShop.Core.dll
 C:\Users\chen8\Desktop\Movie-Project\MovieShop\MovieShop.Core\obj\Debug\netstandard2.1\MovieShop.Core.pdb
+C:\Users\chen8\Desktop\MovieShop\Movie-Project\MovieShop\MovieShop.Core\bin\Debug\netstandard2.1\MovieShop.Core.deps.json
+C:\Users\chen8\Desktop\MovieShop\Movie-Project\MovieShop\MovieShop.Core\bin\Debug\netstandard2.1\MovieShop.Core.dll
+C:\Users\chen8\Desktop\MovieShop\Movie-Project\MovieShop\MovieShop.Core\bin\Debug\netstandard2.1\MovieShop.Core.pdb
+C:\Users\chen8\Desktop\MovieShop\Movie-Project\MovieShop\MovieShop.Core\obj\Debug\netstandard2.1\MovieShop.Core.csprojAssemblyReference.cache
+C:\Users\chen8\Desktop\MovieShop\Movie-Project\MovieShop\MovieShop.Core\obj\Debug\netstandard2.1\MovieShop.Core.AssemblyInfoInputs.cache
+C:\Users\chen8\Desktop\MovieShop\Movie-Project\MovieShop\MovieShop.Core\obj\Debug\netstandard2.1\MovieShop.Core.AssemblyInfo.cs
+C:\Users\chen8\Desktop\MovieShop\Movie-Project\MovieShop\MovieShop.Core\obj\Debug\netstandard2.1\MovieShop.Core.csproj.CoreCompileInputs.cache
+C:\Users\chen8\Desktop\MovieShop\Movie-Project\MovieShop\MovieShop.Core\obj\Debug\netstandard2.1\MovieShop.Core.dll
+C:\Users\chen8\Desktop\MovieShop\Movie-Project\MovieShop\MovieShop.Core\obj\Debug\netstandard2.1\MovieShop.Core.pdb

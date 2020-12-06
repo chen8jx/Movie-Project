@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "SL78dAQI+ZV4Yk+fusI0abnBiOrj307DLE13S0k0nkehOkapiM070ZEoXA5DeGeRgbdlCBzWLWVTakb2iD9cUw==",
+  "dgSpecHash": "gxUlKkmS5Qp2mL/FVrzNPmcyFoapnj2Vg2rNvk77pCSNI+2qQjtTFEhC3mOHLSiqzrvzxRNocm4cWqSjp15YBw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\chen8\\Desktop\\Movie-Project\\MovieShop\\MovieShop.Web\\MovieShop.Web.csproj",
+  "projectFilePath": "C:\\Users\\chen8\\Desktop\\MovieShop\\Movie-Project\\MovieShop\\MovieShop.Web\\MovieShop.Web.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\chen8\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\chen8\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\5.0.0\\microsoft.aspnetcore.cryptography.internal.5.0.0.nupkg.sha512",

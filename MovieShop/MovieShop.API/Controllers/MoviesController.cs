@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Movie.Controllers
+namespace MovieShop.API.Controllers
 {//Attribute based Routing
     [Route("api/[controller]")]
     [ApiController]
@@ -15,6 +15,10 @@ namespace Movie.Controllers
     public class MoviesController : ControllerBase
     {
         private readonly IMovieService _movieService;
+        public MoviesController(IMovieService movieService)
+        {
+            _movieService = movieService;
+        }
         // api/movies/toprevenue
         [HttpGet]
         [Route("toprevenue")] //System automatically create api/movies because of the controller name
@@ -30,6 +34,46 @@ namespace Movie.Controllers
                 return NotFound("No Movies Found");
             }
             return Ok(movies);
+        }
+        [HttpGet]
+        [Route("{id:int}")]
+        public async Task<IActionResult> GetMovieById(int id)
+        {
+            var movie = await _movieService.GetMovieAsync(id);
+            if (movie == null)
+            {
+                return Ok(movie);
+            }
+            return NotFound("No Movies Found");
+        }
+        [HttpGet]
+        [Route("toprated")]
+        public async Task<IActionResult> GetTopRatedMovies()
+        {
+            var movies = await _movieService.GetTopRatedMovies();
+            if (!movies.Any())
+            {
+                return Ok(movies);
+            }
+            return NotFound("No Movies Found");
+        }
+        [HttpGet]
+        [Route("genre/{genreId:int}")]
+        public async Task<IActionResult> GetMoviesByGenre(int genreId)
+        {
+            var movies = await _movieService.GetMoviesByGenre(genreId);
+            if (!movies.Any())
+            {
+                return Ok(movies);
+            }
+            return NotFound("No Movies Found");
+        }
+        [HttpGet]
+        [Route("{id}/reviews")]
+        public async Task<IActionResult> GetMovieReviews(int id)
+        {
+            var reviews = await _movieService.GetReviewsForMovie(id);
+            return Ok(reviews);
         }
     }
 }

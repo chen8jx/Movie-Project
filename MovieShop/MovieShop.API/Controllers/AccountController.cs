@@ -7,16 +7,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Movie.Controllers
+namespace MovieShop.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
     public class AccountController : ControllerBase
     {
         private readonly IUserService _userService;
+        public AccountController(IUserService userService)
+        {
+            _userService = userService;
+        }
 
         [HttpGet]
-        [Route("{id}")]
+        [Route("{id:int}")]
         public async Task<IActionResult> GetUserById(int id)
         {
             var user = await _userService.GetUserDetails(id);
@@ -49,8 +53,9 @@ namespace Movie.Controllers
                 var userLogin = await _userService.ValidateUser(loginRequestModel.Email, loginRequestModel.Password);
                 if (userLogin != null)
                 {
-                    return Ok(loginRequestModel);
+                    return Ok(userLogin);
                 }
+                return BadRequest(new { message = "Invalid email or password" });
             }
             return BadRequest(new { message = "Invalid email or password" });
         }
