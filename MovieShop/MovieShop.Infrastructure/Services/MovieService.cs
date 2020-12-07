@@ -146,36 +146,35 @@ namespace MovieShop.Infrastructure.Services
 
         public async Task<MovieDetailsResponseModel> UpdateMovie(MovieCreateRequest movieCreateRequest)
         {
-            throw new NotImplementedException();
-            //var dbMovie = await _movieRepository.GetMovieByTitle(movieCreateRequest.Title);
-            //if (dbMovie == null)
-            //{
-            //    throw new Exception("Movie Not Found");
-            //}
-            //var movie = new Movie
-            //{
-            //    Title = movieCreateRequest.Title,
-            //    Overview = movieCreateRequest.Overview,
-            //    Tagline = movieCreateRequest.Tagline,
-            //    Revenue = movieCreateRequest.Revenue,
-            //    Budget = movieCreateRequest.Budget,
-            //    ImdbUrl = movieCreateRequest.ImdbUrl,
-            //    TmdbUrl = movieCreateRequest.TmdbUrl,
-            //    PosterUrl = movieCreateRequest.PosterUrl,
-            //    BackdropUrl = movieCreateRequest.BackdropUrl,
-            //    OriginalLanguage = movieCreateRequest.OriginalLanguage,
-            //    ReleaseDate = movieCreateRequest.ReleaseDate,
-            //    RunTime = movieCreateRequest.RunTime,
-            //    Price = movieCreateRequest.Price
-            //};
-            //var updateMovie = await _movieRepository.UpdateAsync(movie);
-            //var response = new MovieDetailsResponseModel
-            //{
-            //    Id = updateMovie.Id,
-            //    Title = updateMovie.Title,
-            //    Overview = updateMovie.Overview
-            //};
-            //return response;
+            var dbMovie = await _movieRepository.GetMovieByTitle(movieCreateRequest.Title);
+            if (dbMovie == null)
+            {
+                throw new Exception("Movie Not Found");
+            }
+            var movie = new Movie
+            {
+                Title = movieCreateRequest.Title,
+                Overview = movieCreateRequest.Overview,
+                Tagline = movieCreateRequest.Tagline,
+                Revenue = movieCreateRequest.Revenue,
+                Budget = movieCreateRequest.Budget,
+                ImdbUrl = movieCreateRequest.ImdbUrl,
+                TmdbUrl = movieCreateRequest.TmdbUrl,
+                PosterUrl = movieCreateRequest.PosterUrl,
+                BackdropUrl = movieCreateRequest.BackdropUrl,
+                OriginalLanguage = movieCreateRequest.OriginalLanguage,
+                ReleaseDate = movieCreateRequest.ReleaseDate,
+                RunTime = movieCreateRequest.RunTime,
+                Price = movieCreateRequest.Price
+            };
+            var updateMovie = await _movieRepository.UpdateAsync(movie);
+            var response = new MovieDetailsResponseModel
+            {
+                Id = updateMovie.Id,
+                Title = updateMovie.Title,
+                Overview = updateMovie.Overview
+            };
+            return response;
         }
     }
 }
