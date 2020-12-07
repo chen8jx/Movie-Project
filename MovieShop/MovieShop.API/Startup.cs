@@ -51,6 +51,9 @@ namespace MovieShop.API
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<ICryptoService, CryptoService>();
+            services.AddScoped<IPurchaseRepository, PurchaseRepository>();
+            services.AddScoped<IAsyncRepository<Favorite>, EfRepository<Favorite>>();
+            services.AddScoped<IAsyncRepository<Review>, EfRepository<Review>>();
 
             services.AddScoped<ICastService, CastService>();
             services.AddScoped<IAsyncRepository<Cast>, EfRepository<Cast>>();

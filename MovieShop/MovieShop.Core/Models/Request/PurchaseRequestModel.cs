@@ -12,9 +12,9 @@ namespace MovieShop.Core.Models.Request
             PurchaseNumber = Guid.NewGuid();
         }
         public int UserId { get; set; }
-        public Guid? PurchaseNumber { get; set; }
-        public decimal? TotalPrice { get; set; }
-        public DateTime? PurchaseDateTime { get; set; }
+        public Guid PurchaseNumber { get; set; }
+        public decimal TotalPrice { get; set; }
+        public DateTime PurchaseDateTime { get; set; }
         public int MovieId { get; set; }
     }
 }

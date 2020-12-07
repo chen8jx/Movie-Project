@@ -18,13 +18,13 @@ namespace MovieShop.Core.ServiceInterfaces
         Task AddFavorite(FavoriteRequestModel favoriteRequest);
         Task RemoveFavorite(FavoriteRequestModel favoriteRequest);
         Task<bool> FavoriteExists(int id, int movieId);
-        Task<FavoriteResponseModel> GetAllFavoritesForUser(int id);
+        Task<IEnumerable<FavoriteResponseModel>> GetAllFavoritesForUser(int id);
         Task PurchaseMovie(PurchaseRequestModel purchaseRequest);
         Task<bool> IsMoviePurchased(PurchaseRequestModel purchaseRequest);
-        Task<PurchaseResponseModel> GetAllPurchasesForUser(int id);
+        Task<IEnumerable<PurchaseResponseModel>> GetAllPurchasesForUser(int id);
         Task AddMovieReview(ReviewRequestModel reviewRequest);
         Task UpdateMovieReview(ReviewRequestModel reviewRequest);
         Task DeleteMovieReview(int userId, int movieId);
-        Task<ReviewResponseModel> GetAllReviewsByUser(int id);
+        Task<IEnumerable<ReviewResponseModel>> GetAllReviewsByUser(int id);
     }
 }
