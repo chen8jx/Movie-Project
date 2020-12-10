@@ -60,16 +60,15 @@ namespace MovieShop.Infrastructure.Repositories
         }
         public override async Task<Movie> GetByIdAsync(int id)
         {
-            //var movie = await _dbContext.Movie
-            //                            .Include(m => m.MovieCast).ThenInclude(m => m.Cast).Include(m => m.MovieGenre)
-            //                            .ThenInclude(m => m.Genre)
-            //                            .FirstOrDefaultAsync(m => m.Id == id);
-            //if (movie == null) return null;
-            //var movieRating = await _dbContext.Reviews.Where(r => r.MovieId == id).DefaultIfEmpty()
-            //                                  .AverageAsync(r => r == null ? 0 : r.Rating);
+            var movie = await _dbContext.Movie
+                                        .Include(m => m.MovieCast).ThenInclude(m => m.Cast).Include(m => m.MovieGenre)
+                                        .ThenInclude(m => m.Genre)
+                                        .FirstOrDefaultAsync(m => m.Id == id);
+            if (movie == null) return null;
+            var movieRating = await _dbContext.Review.Where(r => r.MovieId == id).DefaultIfEmpty()
+                                              .AverageAsync(r => r == null ? 0 : r.Rating);
             //if (movieRating > 0) movie.Rating = movieRating;
-            //return movie;
-            return null;
+            return movie;
         }
 
         //public async Task<IEnumerable<Movie>> GetTopRatedMovies()

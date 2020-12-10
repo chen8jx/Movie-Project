@@ -40,7 +40,7 @@ namespace MovieShop.API.Controllers
         public async Task<IActionResult> GetMovieById(int id)
         {
             var movie = await _movieService.GetMovieAsync(id);
-            if (movie == null)
+            if (movie != null)
             {
                 return Ok(movie);
             }

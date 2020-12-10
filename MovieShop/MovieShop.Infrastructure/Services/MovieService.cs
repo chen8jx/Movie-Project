@@ -87,8 +87,9 @@ namespace MovieShop.Infrastructure.Services
                 TmdbUrl = movie.TmdbUrl,
                 ReleaseDate = movie.ReleaseDate,
                 RunTime = movie.RunTime,
-                Price = movie.Price
+                Price = movie.Price,
                 //FavoritesCount = count
+                Genres=movie.
             };
             return movieDetails;
         }
