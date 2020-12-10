@@ -11,7 +11,7 @@ export class ApiService {
 
   constructor(protected http: HttpClient) { }
 
-  getAll(path: string,id?:number): Observable<any[]>{
+  getAll(path: string,id?:number): Observable<any[]> {
     let getUrl:string;
     if(id){
       getUrl=`${environment.apiUrl}${path}` +`/` +id;

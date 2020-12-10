@@ -16,7 +16,7 @@ export class MovieService {
     return this.apiService.getOne('movies',id)
   }
 
-  getMoviesByGenre(id:number):Observable<Movie[]>{
+  getMoviesByGenre(id:number):Observable<Movie[]> {
     return this.apiService.getAll('movies/genre',id)
   }
 }
