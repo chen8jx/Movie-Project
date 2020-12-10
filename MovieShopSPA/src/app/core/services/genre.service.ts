@@ -9,6 +9,6 @@ import { ApiService } from './api.service';
 export class GenreService {
   constructor(private apiService: ApiService) { }
   getAllGenres(): Observable<Genre[]> {
-    return this.apiService.getAll('genres/genres');
+    return this.apiService.getAll('genres');  
   }
 }

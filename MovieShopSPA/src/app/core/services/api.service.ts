@@ -14,21 +14,21 @@ export class ApiService {
   getAll(path: string,id?:number): Observable<any[]> {
     let getUrl:string;
     if(id){
-      getUrl=`${environment.apiUrl}${path}` +`/` +id;
+      getUrl=`${environment.apiUrl}${path}` +'/' +id;
     }
     else{
       getUrl = `${environment.apiUrl}${path}`;
     }
     return this.http
       .get(getUrl)
-      .pipe(map(resp=>resp as any[])
+      .pipe(map(resp=>resp as any[]) 
     )
   }
 
   getOne(path: string, id?:number) : Observable<any>{
     let getUrl:string;
     if (id) {
-      getUrl = `${environment.apiUrl}${path}` +`/` +id;
+      getUrl = `${environment.apiUrl}${path}` +'/' +id;
     }
     else{
       getUrl = `${environment.apiUrl}${path}`;
