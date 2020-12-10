@@ -21,6 +21,12 @@ namespace MovieShop.Infrastructure.Data
             modelBuilder.Entity<MovieCrew>(ConfigureMovieCrew);
             modelBuilder.Entity<Review>(ConfigureReview);
             modelBuilder.Entity<UserRole>(ConfigureUserRole);
+            modelBuilder.Entity<MovieGenre>(ConfigureMovieGenre);
+        }
+        private void ConfigureMovieGenre(EntityTypeBuilder<MovieGenre> builder)
+        {
+            builder.ToTable("MovieGenre");
+            builder.HasKey(c => new { c.MovieId, c.GenreId });
         }
         private void ConfigureUserRole(EntityTypeBuilder<UserRole> builder)
         {
@@ -88,5 +94,6 @@ namespace MovieShop.Infrastructure.Data
         public DbSet<MovieCrew> MovieCrew { get; set; }
         public DbSet<Purchase> Purchase { get; set; }
         public DbSet<Review> Review { get; set; }
+        public DbSet<MovieGenre> MovieGenre { get; set; }
     }
 }

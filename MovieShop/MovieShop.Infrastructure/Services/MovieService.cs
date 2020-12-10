@@ -8,6 +8,7 @@ using MovieShop.Infrastructure.Data;
 using MovieShop.Infrastructure.Repositories;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -92,9 +93,23 @@ namespace MovieShop.Infrastructure.Services
             return movieDetails;
         }
 
-        public Task<IEnumerable<MovieResponseModel>> GetMoviesByGenre(int genreId)
+        public async Task<IEnumerable<MovieResponseModel>> GetMoviesByGenre(int genreId)
         {
-            throw new NotImplementedException();
+            var movies = await _movieRepository.GetMoviesByGenre(genreId);
+            if (!movies.Any())
+                throw new Exception("No Movies Found");
+            var response = new List<MovieResponseModel>();
+            foreach (var movie in movies)
+            {
+                response.Add(new MovieResponseModel
+                {
+                    Id = movie.Id,
+                    Title = movie.Title,
+                    PosterUrl = movie.PosterUrl,
+                    ReleaseDate = movie.ReleaseDate.Value
+                });
+            }
+            return response;
         }
 
         public Task<int> GetMoviesCount(string title = "")

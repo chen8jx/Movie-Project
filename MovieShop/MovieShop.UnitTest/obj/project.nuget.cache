@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "2pyUwaZ1SY9qr33Ot169JAzqEbx49zTV0c7l1AkuWI+tTL9YWqn7F3DY4IJG3n3oa9o/6/2FepvRrOAirQprqA==",
+  "dgSpecHash": "ul0z8VZb1QDbnET09zgyDXHP+WAjQgD7ezlndZ1RwMMDXuvRLuJoSSon1qXX3DCBsA//4lR/DJrG0IM2E9L99A==",
   "success": true,
   "projectFilePath": "C:\\Users\\chen8\\Desktop\\MovieShop\\Movie-Project\\MovieShop\\MovieShop.UnitTest\\MovieShop.UnitTest.csproj",
   "expectedPackageFiles": [
@@ -143,7 +143,8 @@
     "C:\\Users\\chen8\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Users\\chen8\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
     "C:\\Users\\chen8\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
-    "C:\\Users\\chen8\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512"
+    "C:\\Users\\chen8\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512",
+    "C:\\Users\\chen8\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.10\\microsoft.aspnetcore.app.ref.3.1.10.nupkg.sha512"
   ],
   "logs": []
 }

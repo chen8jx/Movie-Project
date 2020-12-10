@@ -25,7 +25,10 @@ namespace MovieShop.Infrastructure.Repositories
 
         public async Task<IEnumerable<Movie>> GetMoviesByGenre(int genreId)
         {
-            throw new NotImplementedException();
+            var movies = await _dbContext.MovieGenre.Where(g => g.GenreId == genreId)
+                .Include(mg => mg.Movie)
+                .Select(m => m.Movie).ToListAsync();
+            return movies;
         }
         public async Task<Movie> GetMovieByTitle(string movieTitle)
         {

@@ -62,7 +62,7 @@ namespace MovieShop.API.Controllers
         public async Task<IActionResult> GetMoviesByGenre(int genreId)
         {
             var movies = await _movieService.GetMoviesByGenre(genreId);
-            if (!movies.Any())
+            if (movies != null)
             {
                 return Ok(movies);
             }

@@ -25,11 +25,12 @@ namespace MovieShop.Core.Entities
         public string UpdatedBy { get; set; }
         public string CreatedBy { get; set; }
         public ICollection<Trailer> Trailer { get; set; }
-        public ICollection<Genre> Genre { get; set; }
+        //public ICollection<Genre> Genre { get; set; }
         public ICollection<MovieCast> MovieCast { get; set; }
         public ICollection<MovieCrew> MovieCrew { get; set; }
         public ICollection<Review> Review { get; set; }
         public ICollection<Purchase> Purchase { get; set; }
         public ICollection<Favorite> Favorite { get; set; }
+        public ICollection<MovieGenre> MovieGenre { get; set; }
     }
 }
