@@ -17,7 +17,9 @@ namespace MovieShop.Infrastructure.Services
     public class MovieService : IMovieService
     {
         private readonly IMovieRepository _movieRepository;
-        //private readonly IAsyncRepository<Favorite> _favoriteRepository;
+        private readonly IAsyncRepository<Favorite> _favoriteRepository;
+        private readonly IAsyncRepository<Cast> _castRepository;
+        private readonly IAsyncRepository<Genre> _genreRepository;
         //private MovieRepository repository is also working
         //because MR is inhenrited from IMR
 
@@ -25,13 +27,16 @@ namespace MovieShop.Infrastructure.Services
         //DI is pattern that enables us to wriite loosely coupled code so taht code is more maintainable and testable
 
 
-        public MovieService(IMovieRepository movieRepository)
+        public MovieService(IMovieRepository movieRepository, IAsyncRepository<Favorite> favoriteRepository,
+            IAsyncRepository<Cast> castRepository, IAsyncRepository<Genre> genreRepository)
         {
             //create MovieRepo instance in every method in my service class
             //newing up is very convienient but we need to avoid it as much as we can
             //_repository = new MovieRepository(new MovieShopDbContext(null));
             _movieRepository = movieRepository;
-            //_favoriteRepository = favoriteRepository;
+            _favoriteRepository = favoriteRepository;
+            _castRepository = castRepository;
+            _genreRepository = genreRepository;
         }
 
         public async Task<MovieDetailsResponseModel> CreateMovie(MovieCreateRequest movieCreateRequest)
@@ -71,7 +76,7 @@ namespace MovieShop.Infrastructure.Services
         public async Task<MovieDetailsResponseModel> GetMovieAsync(int id)
         {
             var movie = await _movieRepository.GetByIdAsync(id);
-            //var count = await _favoriteRepository.GetCountAsync(f => f.MovieId == id);
+            var count = await _favoriteRepository.GetCountAsync(f => f.MovieId == id);
             var movieDetails = new MovieDetailsResponseModel
             {
                 Id = movie.Id,
@@ -88,9 +93,36 @@ namespace MovieShop.Infrastructure.Services
                 ReleaseDate = movie.ReleaseDate,
                 RunTime = movie.RunTime,
                 Price = movie.Price,
-                //FavoritesCount = count
-                Genres=movie.
+                FavoritesCount = count
             };
+            var genres = new List<Genre>();
+            foreach (var movieGenre in movie.MovieGenre)
+            {
+                var genre = await _genreRepository.GetByIdAsync(movieGenre.GenreId);
+                var response = new Genre
+                {
+                    Id = genre.Id,
+                    Name = genre.Name
+                };
+                genres.Add(response);
+            }
+            movieDetails.Genres = genres;
+            var casts = new List<MovieDetailsResponseModel.CastResponseModel>();
+            foreach (var movieCast in movie.MovieCast)
+            {
+                var cast = await _castRepository.GetByIdAsync(movieCast.CastId);
+                var response = new MovieDetailsResponseModel.CastResponseModel
+                {
+                    Id = cast.Id,
+                    Name = cast.Name,
+                    Gender = cast.Gender,
+                    TmdbUrl = cast.TmdbUrl,
+                    ProfilePath = cast.ProfilePath,
+                    Character = movieCast.Charater
+                };
+                casts.Add(response);
+            }
+            movieDetails.Casts = casts;
             return movieDetails;
         }
 
