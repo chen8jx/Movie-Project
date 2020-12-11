@@ -14,7 +14,6 @@ export class GenresComponent implements OnInit {
   constructor(private genreService: GenreService) {}
   ngOnInit(): void {
     this.genreService.getAllGenres().subscribe((g) => {
-      console.log('called genre service');
       this.genres = g;
     });
   }

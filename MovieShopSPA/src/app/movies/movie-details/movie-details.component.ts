@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { MovieService } from 'src/app/core/services/movie.service';
-import { Movie } from 'src/app/shared/models/movie';
+import { Genre } from 'src/app/shared/models/genre';
+import { MovieDetails } from 'src/app/shared/models/movie-details';
+import { Casts } from 'src/app/shared/models/cast';
+
 @Component({
   selector: 'app-movie-details',
   templateUrl: './movie-details.component.html',
@@ -13,15 +16,17 @@ export class MovieDetailsComponent implements OnInit {
     private movieService: MovieService
   ) {}
   movieId: number;
-  movie: Movie;
+  movieDetails: MovieDetails;
+  genres: Genre[];
+  casts: Casts[];
   ngOnInit(): void {
     this.route.paramMap.subscribe((p) => {
       this.movieId = +p.get('id');
-      console.log(this.movieId);
       // make a call to movie service to get movie details
       this.movieService.getMovieDetails(this.movieId).subscribe((m) => {
-        this.movie = m;
-        console.log(this.movie);
+        this.movieDetails = m;
+        this.genres=this.movieDetails.genres;
+        this.casts=this.movieDetails.casts;
       });
     });
   }

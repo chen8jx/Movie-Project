@@ -15,5 +15,5 @@ export interface MovieDetails{
     price?: number;
     favoritesCount: number;
     casts: any[];
-    genres: any[]
+    genres: any[];
 }
