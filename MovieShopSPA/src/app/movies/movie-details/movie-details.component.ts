@@ -15,6 +15,7 @@ export class MovieDetailsComponent implements OnInit {
     private route: ActivatedRoute,
     private movieService: MovieService
   ) {}
+  
   movieId: number;
   movieDetails: MovieDetails;
   genres: Genre[];
