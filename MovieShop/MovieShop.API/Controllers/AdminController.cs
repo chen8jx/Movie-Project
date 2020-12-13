@@ -33,14 +33,12 @@ namespace MovieShop.API.Controllers
         [HttpPut("movie")]
         public async Task<IActionResult> UpdateMovie(MovieCreateRequest movieCreateRequest)
         {
-            var movie = await _movieService.UpdateMovie(movieCreateRequest);
-            return Ok(movie);
-            //if (ModelState.IsValid)
-            //{
-            //    var movie = await _movieService.UpdateMovie(movieCreateRequest);
-            //    return Ok(movie);
-            //}
-            //return BadRequest(new { message = "please correct the movie input information" });
+            if (ModelState.IsValid)
+            {
+                var movie = await _movieService.UpdateMovie(movieCreateRequest);
+                return Ok(movie);
+            }
+            return BadRequest(new { message = "please correct the movie input information" });
         }
         [HttpGet]
         [Route("purchases")]

@@ -150,24 +150,40 @@ namespace MovieShop.Infrastructure.Services
             throw new NotImplementedException();
         }
 
-        public async Task<IEnumerable<ReviewMovieResponseModel>> GetReviewsForMovie(int id)
+        public async Task<IEnumerable<ReviewResponseModel>> GetReviewsForMovie(int id)
         {
-            throw new NotImplementedException();
+            var reviews = await _movieRepository.GetMovieReviews(id);
+            var reviewDetails = new List<ReviewResponseModel>();
+            foreach (var review in reviews)
+            {
+                reviewDetails.Add(new ReviewResponseModel
+                {
+                    UserId = review.UserId,
+                    MovieId = review.MovieId,
+                    Rating = review.Rating,
+                    ReviewText = review.ReviewText
+                });
+            }
+            return reviewDetails;
         }
 
         public async Task<IEnumerable<MovieRatingResponseModel>> GetTopRatedMovies()
         {
             var movies = await _movieRepository.GetTopRatedMovies();
-            if (movies == null)
+            
+            var movieResponse = new List<MovieRatingResponseModel>();
+            foreach (var movie in movies)
             {
-                throw new Exception("No Movies Found");
+                movieResponse.Add(new MovieRatingResponseModel
+                {
+                    Id = movie.Id,
+                    PosterUrl = movie.PosterUrl,
+                    Title = movie.Title,
+                    ReleaseDate = movie.ReleaseDate,
+                    Rating = movie.Rating
+                });
             }
-            //var response = new MovieResponseModel
-            //{
-            //    Id = movies.Id,
-            //    Title=m
-            //}
-            return movies;
+            return movieResponse;
         }
 
         public async Task<IEnumerable<MovieResponseModel>> GetTopRevenueMovies()
@@ -194,11 +210,11 @@ namespace MovieShop.Infrastructure.Services
 
         public async Task<MovieDetailsResponseModel> UpdateMovie(MovieCreateRequest movieCreateRequest)
         {
-            var dbMovie = await _movieRepository.GetMovieByTitle(movieCreateRequest.Title);
-            if (dbMovie == null)
-            {
-                throw new Exception("Movie Not Found");
-            }
+            //var dbMovie = await _movieRepository.GetMovieByTitle(movieCreateRequest.Title);
+            //if (dbMovie == null)
+            //{
+              //  throw new Exception("Movie Not Found");
+            //}
             var movie = new Movie
             {
                 Title = movieCreateRequest.Title,
@@ -218,9 +234,13 @@ namespace MovieShop.Infrastructure.Services
             var updateMovie = await _movieRepository.UpdateAsync(movie);
             var response = new MovieDetailsResponseModel
             {
-                Id = updateMovie.Id,
+                //Id = updateMovie.Id,
                 Title = updateMovie.Title,
-                Overview = updateMovie.Overview
+                Overview = updateMovie.Overview,
+                PosterUrl=updateMovie.PosterUrl,
+                BackdropUrl=updateMovie.BackdropUrl,
+                Price=updateMovie.Price,
+                Budget=updateMovie.Budget
             };
             return response;
         }

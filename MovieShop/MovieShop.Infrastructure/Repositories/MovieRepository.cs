@@ -71,9 +71,23 @@ namespace MovieShop.Infrastructure.Repositories
             return movie;
         }
 
-        //public async Task<IEnumerable<Movie>> GetTopRatedMovies()
-        //{
-        //    throw new NotImplementedException();
-        //}
+        public async Task<IEnumerable<Review>> GetMovieReviews(int id)
+        {
+            var reviews = await _dbContext.Review.Where(r => r.MovieId == id).Include(r => r.User)
+                                          .Select(r => new Review
+                                          {
+                                              UserId = r.UserId,
+                                              Rating = r.Rating,
+                                              MovieId = r.MovieId,
+                                              ReviewText = r.ReviewText,
+                                              User = new User
+                                              {
+                                                  Id = r.UserId,
+                                                  FirstName = r.User.FirstName,
+                                                  LastName = r.User.LastName
+                                              }
+                                          }).ToListAsync();
+            return reviews;
+        }
     }
 }

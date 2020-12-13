@@ -51,7 +51,7 @@ namespace MovieShop.API.Controllers
         public async Task<IActionResult> GetTopRatedMovies()
         {
             var movies = await _movieService.GetTopRatedMovies();
-            if (!movies.Any())
+            if (movies != null)
             {
                 return Ok(movies);
             }
@@ -73,6 +73,10 @@ namespace MovieShop.API.Controllers
         public async Task<IActionResult> GetMovieReviews(int id)
         {
             var reviews = await _movieService.GetReviewsForMovie(id);
+            if (reviews == null)
+            {
+                return NotFound("No Reviews Found");
+            }
             return Ok(reviews);
         }
     }

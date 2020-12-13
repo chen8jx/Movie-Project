@@ -39,9 +39,11 @@ namespace MovieShop.Web.Controllers
         {
             return View();
         }
-        public IActionResult Details(int movieId)
+        [HttpGet]
+        public async Task<IActionResult> Details(int movieId)
         {
-            return View();
+            var movie = await _movieService.GetMovieAsync(movieId);
+            return View(movie);
         }
     }
 }

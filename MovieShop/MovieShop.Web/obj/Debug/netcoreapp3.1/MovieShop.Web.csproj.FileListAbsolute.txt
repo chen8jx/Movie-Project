@@ -481,7 +481,6 @@ C:\Users\chen8\Desktop\MovieShop\Movie-Project\MovieShop\MovieShop.Web\obj\Debug
 C:\Users\chen8\Desktop\MovieShop\Movie-Project\MovieShop\MovieShop.Web\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
 C:\Users\chen8\Desktop\MovieShop\Movie-Project\MovieShop\MovieShop.Web\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
 C:\Users\chen8\Desktop\MovieShop\Movie-Project\MovieShop\MovieShop.Web\obj\Debug\netcoreapp3.1\Razor\Views\Movie\CreateMovie.cshtml.g.cs
-C:\Users\chen8\Desktop\MovieShop\Movie-Project\MovieShop\MovieShop.Web\obj\Debug\netcoreapp3.1\Razor\Views\Movie\Details.cshtml.g.cs
 C:\Users\chen8\Desktop\MovieShop\Movie-Project\MovieShop\MovieShop.Web\obj\Debug\netcoreapp3.1\Razor\Views\Movie\Index.cshtml.g.cs
 C:\Users\chen8\Desktop\MovieShop\Movie-Project\MovieShop\MovieShop.Web\obj\Debug\netcoreapp3.1\Razor\Views\Movie\MovieByGenre.cshtml.g.cs
 C:\Users\chen8\Desktop\MovieShop\Movie-Project\MovieShop\MovieShop.Web\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\Genres\Default.cshtml.g.cs
