@@ -208,17 +208,9 @@ namespace MovieShop.Infrastructure.Services
         public async Task UpdateMovieReview(ReviewRequestModel reviewRequest)
         {
             var dbReview = await _reviewRepository.ListAsync(r => r.UserId == reviewRequest.UserId && r.MovieId == reviewRequest.MovieId);
-            if (dbReview == null)
-            {
-                throw new Exception("No Review Found");
-            }
-            var review = new Review
-            {
-                UserId = reviewRequest.UserId,
-                MovieId = reviewRequest.MovieId,
-                Rating = reviewRequest.Rating,
-                ReviewText = reviewRequest.ReviewText
-            };
+            Review review = dbReview.FirstOrDefault();
+            review.Rating = reviewRequest.Rating;
+            review.ReviewText = reviewRequest.ReviewText;
             await _reviewRepository.UpdateAsync(review);
         }
 

@@ -19,7 +19,7 @@ namespace MovieShop.API.Controllers
         {
             _userService = userService;
         }
-        [Authorize]
+        //[Authorize]
         [HttpPost]
         [Route("purchase")]
         public async Task<ActionResult> CreatePurchase(PurchaseRequestModel purchaseRequest)
@@ -31,7 +31,7 @@ namespace MovieShop.API.Controllers
             }
             return BadRequest(new { message = "please correct the input information" });
         }
-        [Authorize]
+        //[Authorize]
         [HttpPost]
         [Route("favorite")]
         public async Task<ActionResult> FavoritePurchase(FavoriteRequestModel favoriteRequest)
@@ -43,7 +43,7 @@ namespace MovieShop.API.Controllers
             }
             return BadRequest(new { message = "please correct the input information" });
         }
-        [Authorize]
+        //[Authorize]
         [HttpPost]
         [Route("unfavorite")]
         public async Task<ActionResult> UnfavoritePurchase(FavoriteRequestModel favoriteRequest)
@@ -55,7 +55,7 @@ namespace MovieShop.API.Controllers
             }
             return BadRequest(new { message = "please correct the input information" });
         }
-        [Authorize]
+        //[Authorize]
         [HttpGet]
         [Route("{id:int}/movie/{movieId}/favorite")]
         public async Task<ActionResult> IsFavoriteExists(int id, int movieId)
@@ -63,7 +63,7 @@ namespace MovieShop.API.Controllers
             var favoriteExists = await _userService.FavoriteExists(id, movieId);
             return Ok(new { isFavorited = favoriteExists });
         }
-        [Authorize]
+        //[Authorize]
         [HttpPost]
         [Route("review")]
         public async Task<ActionResult> CreateReview(ReviewRequestModel reviewRequest)
@@ -75,7 +75,7 @@ namespace MovieShop.API.Controllers
             }
             return BadRequest(new { message = "please correct the input information" });
         }
-        [Authorize]
+        //[Authorize]
         [HttpPut("review")]
         public async Task<ActionResult> UpdateReview(ReviewRequestModel reviewRequest)
         {
@@ -86,15 +86,19 @@ namespace MovieShop.API.Controllers
             }
             return BadRequest(new { message = "please correct the input information" });
         }
-        [Authorize]
+        //[Authorize]
         [HttpDelete]
         [Route("{userId:int}/movie/{movieId:int}")]
         public async Task<ActionResult> DeleteReview(int userId, int movieId)
         {
-            await _userService.DeleteMovieReview(userId, movieId);
-            return NoContent();
+            if (ModelState.IsValid)
+            {
+                await _userService.DeleteMovieReview(userId, movieId);
+                return Ok();
+            }
+            return BadRequest("Please check the info you entered");
         }
-        [Authorize]
+        //[Authorize]
         [HttpGet]
         [Route("{id:int}/purchases")]
         public async Task<ActionResult> GetUserPurchasedMovies(int id)
@@ -106,7 +110,7 @@ namespace MovieShop.API.Controllers
             }
             return Ok(userMovies);
         }
-        [Authorize]
+        //[Authorize]
         [HttpGet]
         [Route("{id:int}/favorites")]
         public async Task<ActionResult> GetUserFavoriteMovies(int id)
@@ -118,7 +122,7 @@ namespace MovieShop.API.Controllers
             }
             return Ok(userMovies);
         }
-        [Authorize]
+        //[Authorize]
         [HttpGet]
         [Route("{id:int}/reviews")]
         public async Task<ActionResult> GetUserReviewedMovies(int id)

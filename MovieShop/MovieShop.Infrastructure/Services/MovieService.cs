@@ -47,15 +47,38 @@ namespace MovieShop.Infrastructure.Services
 
             var movie = new Movie
             {
+                Id = movieCreateRequest.Id,
                 Title = movieCreateRequest.Title,
-                Overview = movieCreateRequest.Overview
+                PosterUrl = movieCreateRequest.PosterUrl,
+                BackdropUrl = movieCreateRequest.BackdropUrl,
+                //Rating = movie.Rating,
+                Overview = movieCreateRequest.Overview,
+                Tagline = movieCreateRequest.Tagline,
+                Budget = movieCreateRequest.Budget,
+                Revenue = movieCreateRequest.Revenue,
+                ImdbUrl = movieCreateRequest.ImdbUrl,
+                TmdbUrl = movieCreateRequest.TmdbUrl,
+                ReleaseDate = movieCreateRequest.ReleaseDate,
+                RunTime = movieCreateRequest.RunTime,
+                Price = movieCreateRequest.Price
             };
             var createMovie = await _movieRepository.AddAsync(movie);
             var response = new MovieDetailsResponseModel
             {
                 Id = createMovie.Id,
                 Title = createMovie.Title,
-                Overview = createMovie.Overview
+                PosterUrl = createMovie.PosterUrl,
+                BackdropUrl = createMovie.BackdropUrl,
+                //Rating = movie.Rating,
+                Overview = createMovie.Overview,
+                Tagline = createMovie.Tagline,
+                Budget = createMovie.Budget,
+                Revenue = createMovie.Revenue,
+                ImdbUrl = createMovie.ImdbUrl,
+                TmdbUrl = createMovie.TmdbUrl,
+                ReleaseDate = createMovie.ReleaseDate,
+                RunTime = createMovie.RunTime,
+                Price = createMovie.Price
             };
             return response;
         }
@@ -217,6 +240,7 @@ namespace MovieShop.Infrastructure.Services
             //}
             var movie = new Movie
             {
+                Id=movieCreateRequest.Id,
                 Title = movieCreateRequest.Title,
                 Overview = movieCreateRequest.Overview,
                 Tagline = movieCreateRequest.Tagline,
@@ -234,7 +258,7 @@ namespace MovieShop.Infrastructure.Services
             var updateMovie = await _movieRepository.UpdateAsync(movie);
             var response = new MovieDetailsResponseModel
             {
-                //Id = updateMovie.Id,
+                Id = updateMovie.Id,
                 Title = updateMovie.Title,
                 Overview = updateMovie.Overview,
                 PosterUrl=updateMovie.PosterUrl,
