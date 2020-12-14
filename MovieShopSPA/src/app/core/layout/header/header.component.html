@@ -21,8 +21,19 @@
             </div>
         </div>
       </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+      <li class="nav-item" *ngIf="!isUserAuthenticated">
+        <a class="btn btn-outline-primary" [routerLink]="[ '/login' ]">Login</a>
+      </li>
+      <li class="nav-item" *ngIf="!isUserAuthenticated">
+        <a class="btn btn-outline-primary" [routerLink]="[ '/register' ]">Register</a>
+      </li>
+      <li class="nav-item" *ngIf="isUserAuthenticated">
+        <a class="btn btn-outline-primary" [routerLink]="[ '/' ]" (click)="logout()">Logout</a>
+      </li>
+      <li class="nav-item" *ngIf="isUserAuthenticated">
+        <span class="navbar-text">
+          {{ logedInUser.family_name + " " + logedInUser.given_name }}
+        </span>
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
